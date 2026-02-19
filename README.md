@@ -24,6 +24,10 @@ A Minecraft Fabric mod that creates an atmospheric blind experience.
 3. Place the JAR in your `mods` folder
 4. Launch the game
 
+### Conflicts
+
+- [Voxy](https://modrinth.com/mod/voxy) - voxy mod render breaks the fog mode 
+
 ## Configuration
 
 Open the config screen from:
