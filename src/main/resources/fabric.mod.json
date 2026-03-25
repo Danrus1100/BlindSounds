@@ -7,7 +7,7 @@
   "authors": ["Kilka_v_HJIebe, Danrus110_"],
   "contact": {},
   "license": "All-Rights-Reserved",
-  "icon": "assets/icon.png",
+  "icon": "icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [

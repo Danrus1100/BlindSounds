@@ -2,13 +2,13 @@
   "required": true,
   "minVersion": "0.8",
   "package": "org.kilka.blindsounds.client.mixin",
-  "compatibilityLevel": "JAVA_21",
+  "compatibilityLevel": "JAVA_25",
   "client": [
-    "EntityRenderManagerMixin",
+    "EntityRenderDispatcherMixin",
     "FogRendererMixin",
     "GameRendererMinix",
-    "InGameHudMixin",
-    "SkyRenderingMixin"
+    "GuiMixin",
+    "SkyRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

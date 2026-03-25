@@ -10,8 +10,8 @@ import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
 import dev.isxander.yacl3.config.v2.api.SerialEntry;
 import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
 import dev.isxander.yacl3.platform.YACLPlatform;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.text.Text;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 import org.apache.logging.log4j.core.appender.rolling.action.IfAll;
 
 
@@ -43,44 +43,44 @@ public class Config {
 
     public static Screen createScreen(Screen parent) {
         return YetAnotherConfigLib.createBuilder()
-                .title(Text.literal("Blind Sounds"))
+                .title(Component.literal("Blind Sounds"))
                 .category(ConfigCategory.createBuilder()
-                        .name(Text.literal("Settings"))
+                        .name(Component.literal("Settings"))
                         .group(OptionGroup.createBuilder()
-                                .name(Text.literal("General"))
+                                .name(Component.literal("General"))
                                 .option(Option.<Boolean>createBuilder()
-                                        .name(Text.literal("Mod enabled"))
+                                        .name(Component.literal("Mod enabled"))
                                         .binding(
                                                 true, () -> Config.get().modEnabled, newVal -> Config.get().modEnabled = newVal
                                         )
                                         .controller(TickBoxControllerBuilder::create)
                                         .build())
                                 .option(Option.<Boolean>createBuilder()
-                                        .name(Text.literal("Enable mode fog"))
+                                        .name(Component.literal("Enable mode fog"))
                                         .binding(
                                                 true, () -> Config.get().fogEnabled, newVal -> Config.get().fogEnabled = newVal
                                         )
                                         .controller(TickBoxControllerBuilder::create)
                                         .build())
                                 .option(Option.<Boolean>createBuilder()
-                                        .name(Text.literal("Hide mobs"))
+                                        .name(Component.literal("Hide mobs"))
                                         .binding(
                                                 true, () -> Config.get().mobsEnabled, newVal -> Config.get().mobsEnabled = newVal
                                         )
                                         .controller(TickBoxControllerBuilder::create)
                                         .build())
                                 .option(Option.<Boolean>createBuilder()
-                                        .name(Text.literal("Sound marks enabled"))
+                                        .name(Component.literal("Sound marks enabled"))
                                         .binding(
                                                 true, () -> Config.get().soundMarksEnabled, newVal -> Config.get().soundMarksEnabled = newVal
                                         )
                                         .controller(TickBoxControllerBuilder::create)
                                         .build())
                                 .option(Option.<Integer>createBuilder()
-                                        .name(Text.literal("Interval view radius"))
+                                        .name(Component.literal("Interval view radius"))
                                         .description(
                                                 OptionDescription.createBuilder()
-                                                        .text(Text.literal(
+                                                        .text(Component.literal(
                                                                 "How many times \"Block fog view radius\" will repeat.\n" +
                                                                 "Exemple: \"Block fog view radius\" - 3, \"Interval view radius\" - 2, final view radius - 6 blocks"))
                                                         .build())
@@ -90,10 +90,10 @@ public class Config {
                                         .controller(IntegerFieldControllerBuilder::create)
                                         .build())
                                 .option(Option.<Integer>createBuilder()
-                                        .name(Text.literal("Block fog view radius"))
+                                        .name(Component.literal("Block fog view radius"))
                                         .description(
                                                 OptionDescription.createBuilder()
-                                                        .text(Text.literal("How many block you see in chunk"))
+                                                        .text(Component.literal("How many block you see in chunk"))
                                                 .build())
                                         .binding(
                                                 3, () -> Config.get().blockFogRadius, newVal -> Config.get().blockFogRadius = newVal
@@ -101,10 +101,10 @@ public class Config {
                                         .controller(IntegerFieldControllerBuilder::create)
                                         .build())
                                 .option(Option.<Double>createBuilder()
-                                        .name(Text.literal("Sound markers radius"))
+                                        .name(Component.literal("Sound markers radius"))
                                         .description(
                                                 OptionDescription.createBuilder()
-                                                        .text(Text.literal("Radius from you where mob sound will trigger sound marker"))
+                                                        .text(Component.literal("Radius from you where mob sound will trigger sound marker"))
                                                         .build())
                                         .binding(
                                                 10.0, () -> Config.get().soundMarkersReaction, newVal -> Config.get().soundMarkersReaction = newVal
@@ -112,10 +112,10 @@ public class Config {
                                         .controller(DoubleFieldControllerBuilder::create)
                                         .build())
                                 .option(Option.<Long>createBuilder()
-                                        .name(Text.literal("Sound markers visibility duration(milliseconds)"))
+                                        .name(Component.literal("Sound markers visibility duration(milliseconds)"))
                                         .description(
                                                 OptionDescription.createBuilder()
-                                                        .text(Text.literal("How long sound marker will visible in milliseconds"))
+                                                        .text(Component.literal("How long sound marker will visible in milliseconds"))
                                                         .build())
                                         .binding(
                                                 (long) 1000, () -> Config.get().soundMarkerDuration, newVal -> Config.get().soundMarkerDuration = newVal
