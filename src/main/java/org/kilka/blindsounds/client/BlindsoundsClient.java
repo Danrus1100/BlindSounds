@@ -1,8 +1,6 @@
 package org.kilka.blindsounds.client;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
-import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 
 public class BlindsoundsClient implements ClientModInitializer {
 

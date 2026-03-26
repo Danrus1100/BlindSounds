@@ -1,7 +1,7 @@
 package org.kilka.blindsounds.client.mixin;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderPipelines;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.Camera;
 import net.minecraft.client.DeltaTracker;
@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 public class GuiMixin {
     @Inject(method = "render", at = @At("TAIL"))
-    private void onRender(GuiGraphics context, DeltaTracker tickCounter, CallbackInfo ci) {
+    private void onRender(GuiGraphicsExtractor context, DeltaTracker tickCounter, CallbackInfo ci) {
         if(!Config.get().modEnabled || !Config.get().soundMarksEnabled) return;
 
         Minecraft client = Minecraft.getInstance();
